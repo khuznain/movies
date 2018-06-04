@@ -1,6 +1,6 @@
 import * as actionTypes from './actionTypes';
 
-export const addExpense = (movies) => {
+export const movies = (movies) => {
     return {
         type: '',
         movies
