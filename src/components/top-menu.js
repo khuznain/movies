@@ -4,25 +4,18 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavLink, NavItem} fr
 function TopMenu( { onClick, isOpen } ) {
     return (
         <div>
-            <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">Movies</NavbarBrand>
+            <Navbar color="light" light expand="md" style={{ borderBottom: '3px solid #e7e7e7'}}>
+                <NavbarBrand href="/"><i class="fa fa-film" aria-hidden="true"></i></NavbarBrand>
                 <NavbarToggler onClick={ onClick } />
                 <Collapse isOpen={ isOpen } navbar>
-                    {
-                        /*
-                            In Case if you are adding new navigation item 
-                            
-                            <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink href="#">Components</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="#">Components</NavLink>
-                            </NavItem>
-                            
-                            </Nav>   
-                        */
-                    }
+                    <Nav className="ml-auto" navbar>
+                        <NavItem>
+                            <NavLink href="#">Movies</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="#">Tv-Shows</NavLink>
+                        </NavItem>
+                    </Nav>
                 </Collapse>
             </Navbar>
         </div>
