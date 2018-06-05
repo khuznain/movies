@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, CardBody } from 'reactstrap';
+import { connect } from 'react-redux';
+import { fetchMovies } from '../redux/actions/index.js';
 
 class HomePage extends Component {
+
+    componentDidMount() {
+        this.props.fetchMovies();
+    }
+
     render () {
+        // console.log(this.props.movies);
         return (
             <div>
                 <Row>
@@ -19,4 +27,12 @@ class HomePage extends Component {
     }
 }
 
-export default HomePage;
+function mapStateToProps(state) {
+    return {
+        movies : state.movieStore.movies,
+        loading: state.movieStore.loading,
+        errors: state.movieStore.errors
+    }
+}
+  
+export default connect(mapStateToProps, { fetchMovies })(HomePage);

@@ -5,7 +5,7 @@ function TopMenu( { onClick, isOpen } ) {
     return (
         <div>
             <Navbar color="light" light expand="md" style={{ borderBottom: '3px solid #e7e7e7'}}>
-                <NavbarBrand href="/"><i class="fa fa-film" aria-hidden="true"></i></NavbarBrand>
+                <NavbarBrand href="/"><i className="fa fa-film" aria-hidden="true"></i></NavbarBrand>
                 <NavbarToggler onClick={ onClick } />
                 <Collapse isOpen={ isOpen } navbar>
                     <Nav className="ml-auto" navbar>
