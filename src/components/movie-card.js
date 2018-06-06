@@ -1,5 +1,4 @@
 import React from 'react';
-import './movie-card.css';
 import moment from 'moment';
 
 function MovieCard( { movie, onClick }) {

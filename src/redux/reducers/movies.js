@@ -3,6 +3,9 @@ import { updateObject } from '../../shared/utility';
 
 const initialState = {
     movies: [],
+    casts: [],
+    trailers: [],
+    movie: {},
     loading: false,
     errors: {}
 };
@@ -22,6 +25,51 @@ const fetchMoviesFail = (state, action) => {
     return updateObject(state, {loading: false});
 };
 
+const fetchMovieStart = (state, action) => {
+    return updateObject(state, {loading: true});
+};
+
+const fetchMovieSuccess = (state, action) => {
+    return updateObject(state, {
+        movie: action.movie,
+        loading: false
+    });
+};
+
+const fetchMovieFail = (state, action) => {
+    return updateObject(state, {loading: false});
+};
+
+const fetchMovieCastStart = (state, action) => {
+    return updateObject(state, {loading: true});
+};
+
+const fetchMovieCastSuccess = (state, action) => {
+    return updateObject(state, {
+        casts: action.casts,
+        loading: false
+    });
+};
+
+const fetchMovieCastFail = (state, action) => {
+    return updateObject(state, {loading: false});
+};
+
+const fetchTrailerStart = (state, action) => {
+    return updateObject(state, {loading: true});
+};
+
+const fetchTrailerSuccess = (state, action) => {
+    return updateObject(state, {
+        trailers: action.youtubeTrailers,
+        loading: false
+    });
+};
+
+const fetchTrailerFail = (state, action) => {
+    return updateObject(state, {loading: false});
+};
+
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.FETCH_MOVIES_START:
@@ -31,6 +79,27 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_MOVIES_FAIL:
             return fetchMoviesFail(state, action);
         
+        case actionTypes.FETCH_MOVIE_START:
+            return fetchMovieStart(state, action);
+        case actionTypes.FETCH_MOVIE_SUCCESS:
+            return fetchMovieSuccess(state, action);
+        case actionTypes.FETCH_MOVIE_FAIL:
+            return fetchMovieFail(state, action);
+        
+        case actionTypes.FETCH_CASTS_START:
+            return fetchMovieCastStart(state, action);
+        case actionTypes.FETCH_CASTS_SUCCESS:
+            return fetchMovieCastSuccess(state, action);
+        case actionTypes.FETCH_CASTS_FAIL:
+            return fetchMovieCastFail(state, action);
+        
+        case actionTypes.FETCH_TRAILERS_START:
+            return fetchTrailerStart(state, action);
+        case actionTypes.FETCH_TRAILERS_SUCCESS:
+            return fetchTrailerSuccess(state, action);
+        case actionTypes.FETCH_TRAILERS_FAIL:
+            return fetchTrailerFail(state, action);
+
         case actionTypes.LOADE_MORE_MOVIES_SUCCESS:
             return { 
                 ...state,

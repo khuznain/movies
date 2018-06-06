@@ -1,5 +1,8 @@
 // Export the functions
 export {
     fetchMovies,
-    loadMore
+    loadMore,
+    fetchMovie,
+    fetchMovieCast,
+    fetchTrailer
 } from './movies';
