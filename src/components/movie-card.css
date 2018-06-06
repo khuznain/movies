@@ -1,0 +1,28 @@
+.movie-card {
+    /* margin-left: 10px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    width: 300px; */
+    
+    border-radius: 8px !important;
+    border-style: none !important;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important; 
+    transform: scale(0.9);
+}
+
+.movie-card:hover {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10), 0 8px 8px rgba(0, 0, 0, 0.18) !important;
+}
+
+.movie-card.card {
+    height: 450px;
+}
+
+.card-footer-badge {
+    font-size: 1rem;
+}
+
+.card-img-top {
+    height: 230px;
+}

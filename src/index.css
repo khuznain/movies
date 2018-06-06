@@ -8,8 +8,16 @@ h2.title {
   display: inline-block;
 }
 
+.navbar-light .navbar-brand {
+  color: #c1d62e !important;
+}
+
 h2 {
   font-size: 1.2em !important;
   margin: 0 0 4px 0;
   font-weight: 200 !important;
+}
+
+.active {
+  background-color: #c1d62e;
 }
