@@ -30,6 +30,12 @@ const reducer = (state = initialState, action) => {
             return fetchMoviesSuccess(state, action);
         case actionTypes.FETCH_MOVIES_FAIL:
             return fetchMoviesFail(state, action);
+        
+        case actionTypes.LOADE_MORE_MOVIES_SUCCESS:
+            return { 
+                ...state,
+                movies: state.movies.concat(action.movies)
+            }
         default:
             return state;
     }

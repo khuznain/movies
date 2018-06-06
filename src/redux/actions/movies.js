@@ -19,6 +19,23 @@ export const fetchMoviesStart = () => {
     return { type: actionTypes.FETCH_MOVIES_START };
 };
 
+export const loadMoreMoviesSuccess = (movies) => {
+    return {
+        type: actionTypes.LOADE_MORE_MOVIES_SUCCESS,
+        movies
+    };
+};
+
+export const loadMoreMoviesFail = (error) => {
+    return {
+        type: actionTypes.LOADE_MORE_MOVIES_FAIL,
+        error: error};
+};
+
+export const loadMoreMoviesStart = () => {
+    return { type: actionTypes.LOADE_MORE_MOVIES_START };
+};
+
 export const fetchMovies = (page) => {
     return dispatch => {
         dispatch(fetchMoviesStart());
@@ -35,6 +52,26 @@ export const fetchMovies = (page) => {
             )
             .catch(err => {
                 dispatch(fetchMoviesFail(err))
+            });
+    };
+};
+
+export const loadMore = (page) => {
+    return dispatch => {
+        dispatch(loadMoreMoviesStart());
+        api.movie.fetchMovies(page)
+            .then(res => {
+                console.log(res.data.results);
+                let movies = [];
+                if(res.status === 200) {
+                    movies = _.map(res.data.results, _.partialRight(_.pick, ['id', 'title', 'vote_average', 'vote_count', 'release_date', 'poster_path', 'overview']));
+                }
+                    dispatch(loadMoreMoviesSuccess(movies));
+                }
+                
+            )
+            .catch(err => {
+                dispatch(loadMoreMoviesFail(err))
             });
     };
 };
