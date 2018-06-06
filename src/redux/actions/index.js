@@ -6,3 +6,8 @@ export {
     fetchMovieCast,
     fetchTrailer
 } from './movies';
+
+export {
+    fetchShows,
+    loadMoreShows
+} from './shows';

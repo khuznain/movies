@@ -6,6 +6,7 @@ import Poster from '../components/poster.js';
 import PosterInfo from '../components/poster-info.js';
 import CastList from '../components/cast-list.js';
 import TrailerList from '../components/trailer-list.js';
+import { CAST_MAX_NUM, TRAILER_MAX_NUM } from '../const';
 
 class MoviesDetailPage extends Component {
     
@@ -30,11 +31,11 @@ class MoviesDetailPage extends Component {
                                     </div>
                                     <div className="col-lg-8 col-md-8 col-sm-12">
                                         <PosterInfo movie={movie}/>
-                                        <CastList casts={casts.slice(0, 5)} />
+                                        <CastList casts={casts.slice(0, CAST_MAX_NUM)} />
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <TrailerList data={trailers.slice(0, 6)} />
+                                    <TrailerList data={trailers.slice(0, TRAILER_MAX_NUM)} />
                                 </div>
                             </CardBody>
                         </Card>

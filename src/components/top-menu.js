@@ -14,7 +14,7 @@ function TopMenu( { onClick, isOpen } ) {
                             <NavLink to="/movies" activeClassName="active" tag={RRNavLink}>Movies</NavLink> 
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#">Tv-Shows</NavLink>
+                            <NavLink to="/shows" activeClassName="active" tag={RRNavLink}>Tv-Shows</NavLink> 
                         </NavItem>
                     </Nav>
                 </Collapse>

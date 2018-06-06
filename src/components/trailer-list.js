@@ -5,7 +5,7 @@ import { Col } from 'reactstrap';
 const TrailerList = ( { data }) => {
     let trailers = data.map(function(trailer) {
         return(
-          <Col xs={12} sm={6} md={4} key={trailer.id} >
+          <Col xs={12} sm={6} md={6} lg={4} key={trailer.id} >
             <Trailer trailer={trailer.key} />
           </Col>
         );
@@ -28,7 +28,7 @@ const TrailerList = ( { data }) => {
           </div>
         );
       } else
-        return null;
+    return null;
 }
 
 export default TrailerList;
