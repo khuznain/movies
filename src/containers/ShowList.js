@@ -15,7 +15,7 @@ class ShowList extends Component {
     }
 
     onClick = (id) => {
-        // this.props.history.push(`/movies/${id}`);
+        this.props.history.push(`/shows/${id}`);
     }
 
     onLoadMore = () => {

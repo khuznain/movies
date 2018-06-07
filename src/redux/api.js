@@ -19,5 +19,7 @@ export default {
             axios.get(`${ROOT_URL}/tv/popular?api_key=${API_KEY}&language=en-US&page=${ page || 1 }`),
         fetchShow: (id) => 
             axios.get(`${ROOT_URL}/tv/${id}?api_key=${API_KEY}&language=en-US`),
+        fetchShowTrailer: (id) => 
+            axios.get(`${ROOT_URL}/tv/${id}/videos?api_key=${API_KEY}&language=en-US`),    
     },
 }

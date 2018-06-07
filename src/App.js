@@ -5,6 +5,7 @@ import './App.css';
 import MovieList from './containers/MovieList';
 import MoviesDetailPage from './containers/MoviesDetailPage';
 import ShowList from './containers/ShowList';
+import ShowDetailPage from './containers/ShowDetailPage';
 import TopNavigation from './containers/TopNavigation';
 import Footer from './components/footer';
 
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/movies" exact={true} component={ MovieList } />
             <Route path="/movies/:id" exact={true} component={ MoviesDetailPage } />
             <Route path="/shows" exact={true} component={ ShowList } />
+            <Route path="/shows/:id" exact={true} component={ ShowDetailPage } />
           </div>
         <Footer />
       </div>

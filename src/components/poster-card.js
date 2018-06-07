@@ -8,7 +8,7 @@ function PosterCard( { data, onClick }) {
             <img className="card-img-top" src={ URL_IMG + IMG_SIZE_SMALL + data.poster_path } alt="" />
             <div className="card-body">
                 <div style={{ display: 'flex', justifyContent: 'space-between'}}>
-                    <p className="card-title">{data.title}</p>
+                    <p className="card-title">{data.title || data.name }</p>
                     <span><i className="fa fa-heart" aria-hidden="true"></i> {data.vote_count}</span>
                 </div>
                 <p className="text-justify" style={{ fontSize: '15px', marginBottom: '0px'}}>{data.overview.substring(0, 70) + '...'}</p>

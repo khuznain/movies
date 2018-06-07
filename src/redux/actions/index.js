@@ -9,5 +9,7 @@ export {
 
 export {
     fetchShows,
-    loadMoreShows
+    loadMoreShows,
+    fetchShow,
+    fetchShowTrailer
 } from './shows';
